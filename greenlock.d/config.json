@@ -1,0 +1,35 @@
+{
+  "defaults": {
+    "store": {
+      "module": "greenlock-store-fs"
+    },
+    "challenges": {
+      "http-01": {
+        "module": "acme-http-01-standalone"
+      }
+    },
+    "renewOffset": "-45d",
+    "renewStagger": "3d",
+    "accountKeyType": "EC-P256",
+    "serverKeyType": "RSA-2048",
+    "subscriberEmail": "pepe.thon@gmail.com"
+  },
+  "sites": [
+    {
+      "subject": "xeggexarbitrage.com",
+      "altnames": [
+        "xeggexarbitrage.com",
+        "www.xeggexarbitrage.com"
+      ],
+      "renewAt": 1740716765196
+    },
+    {
+      "subject": "xeggex-arbitrage.com",
+      "altnames": [
+        "xeggex-arbitrage.com",
+        "www.xeggex-arbitrage.com"
+      ],
+      "renewAt": 1740824663609
+    }
+  ]
+}

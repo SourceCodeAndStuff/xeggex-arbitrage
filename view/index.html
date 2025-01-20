@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Xeggex Arbitrage</title>
+        <link href="/css/bootstrap.min.css" rel="stylesheet">
+        <style>
+            body {
+                background: #121218;
+            }
+            * {
+                color: #FFF;
+            }
+            h2 {
+                color: #FFF;
+            }
+            h1,h4 {
+                color: #F6BA44;
+            }
+            .table tr td, .table tr th {
+                background: none;
+                color: #FFF;
+            }
+            .table tr {
+                background: #272730;
+                border-bottom: #333 1px solid;
+            }
+            .table tr:nth-child(even) {
+                background: rgba(42, 42, 51, 0.5);
+            }
+        </style>
+    </head>
+
+    <body class="d-flex flex-column min-vh-100">
+        <div class="container-fluid container-lg  p-2">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <h1>Xeggex Arbitrage</h1>
+                </div>
+            </div>
+        </div>
+        <div id="summary" class="container-fluid container-lg p-2"></div>
+        <div class="container-fluid container-lg p-2">
+            <div class="row">
+                <div class="col-12">
+                    <h4>Balances</h4>
+                </div>
+            </div>
+        </div>
+        <div id="balances" class="container-fluid container-lg p-2"></div>
+        <div class="container-fluid container-lg p-2">
+            <div class="row">
+                <div class="col-12">
+                    <h4>Routes</h4>
+                </div>
+            </div>
+        </div>
+        <div id="routes" class="container-fluid  container-lg p-2"></div>
+
+        <script src="/js/bootstrap.bundle.min.js"></script>
+        <script src="/socket.io/socket.io.js"></script>
+        <script>
+            var socket = io();
+
+            socket.on('balances', function (msg) {
+                document.getElementById('balances').innerHTML = msg;
+            });
+            socket.on('routes', function (msg) {
+                document.getElementById('routes').innerHTML = msg;
+            });
+            socket.on('summary', function (msg) {
+                document.getElementById('summary').innerHTML = msg;
+            });
+        </script>
+    </body>
+</html>
