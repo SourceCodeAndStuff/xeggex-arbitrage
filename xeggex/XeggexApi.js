@@ -5,8 +5,8 @@ const XeggexSocketClient = require('./XeggexSocketClient.js');
 
 class XeggexApi {
 
-    static API_KEY = "645fe0306413e34f1f9c6810cff32606";
-    static API_SECRET = "0a37aa607de17cee0d7b96b0ba998264d2f849ddc0aefd80";
+    static API_KEY = "c059a67a3425db256d57fe4f1dbf3c5d";
+    static API_SECRET = "861d6504a9d245a5a64f98699ffd89cf2773bf366492745e";
     static BASE_URL = 'https://api.xeggex.com/api/v2';
 
     static socket = new XeggexSocketClient(XeggexApi.API_KEY, XeggexApi.API_SECRET);
